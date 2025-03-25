@@ -1,0 +1,38 @@
+body{
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: rgb(243, 3, 3);
+    color: white;
+
+}
+h1{
+    color: rgb(255, 255, 255);
+}
+a {
+    color: rgb(33, 255, 8);
+    text-decoration:none ;
+}
+a:hover{
+    color: rgb(0, 13, 255);
+}
+ul>li{
+    color: rgb(255, 243, 8);
+}
+ul li::before {
+    content: "🎞️ ";
+    }
+    /* ::after Pseudo-element */
+    a::after {
+    content: " 🍿";
+    }
+ul li:hover{
+    color: rgb(5, 255, 197);
+
+} 
+ul li:nth-child(3){
+    background-color: rgb(13, 0, 255);
+
+
+}
+p::first-letter{
+    color: aqua;
+    font-size: 200%;
