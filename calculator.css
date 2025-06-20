@@ -1,0 +1,14 @@
+body 
+{
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+#container 
+{
+    width: 1000px;
+    margin: 500px auto;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/037/812/706/non_2x/ai-generated-chalkboard-with-mathematical-concepts-free-photo.jpeg");
+   
+}
