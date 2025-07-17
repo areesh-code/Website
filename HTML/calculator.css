@@ -1,0 +1,72 @@
+body 
+{
+    background-color: black;
+    font-family: 'Courier New', Courier, monospace;
+
+}
+
+#container 
+{
+    width: 1000px;
+    margin: 50px auto;
+    background-image: url("https://static.vecteezy.com/system/resources/previews/037/812/706/non_2x/ai-generated-chalkboard-with-mathematical-concepts-free-photo.jpeg");
+    height: 550px;
+   
+}
+
+#Keyboard 
+{
+    height: 300px;
+
+}
+
+#Calculator 
+{
+    width: 320px;
+    height: 520px;
+    background-color: silver;
+    margin: 0 auto;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+    top: 25px;
+    position: relative;
+
+   
+}
+
+.operator,.number,.empty
+{
+    width: 50px;
+    height: 50px;
+    background-color: #f0f0f0;
+    border-radius: 10px;
+    margin: 15px;
+    cursor: pointer;
+    float: left;
+    border-radius: 50%;
+    
+}
+#result
+{
+    height: 120px;
+}
+#history
+{
+    height: 20px;
+    text-align: right;
+    font-size: 20px;
+    color:aqua;
+    padding-top: 10px;
+    margin: 0px 20px;
+}
+
+#output
+{
+    height: 50px;
+    text-align: right;
+    font-size: 30px;
+    color: rgba(255, 255, 255, 0);
+    padding-top: 10px;
+    margin: 0px 20px;
+}
+
