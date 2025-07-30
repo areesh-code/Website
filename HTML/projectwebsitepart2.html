@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Get Your Projects with you</title>
+    <style>
+        body { margin: 0; font-family: Arial, sans-serif; }
+        nav {
+            background-color: #333;
+            overflow: hidden;
+        }
+        nav a {
+            float: left;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 14px 20px;
+            text-decoration: none;
+        }
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        .banner {
+            width: 100%;
+            height: 300px;
+            background-image: url('banner.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .section {
+            padding: 40px;
+            background-color: #f4f4f4;
+        }
+        .portfolio {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .portfolio-item {
+            flex: 1 1 calc(33% - 20px);
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0 0 5px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <h1>Get Your Projects with you</h1>
+    <p>In this project, you will be creating a section and portfolio for the restaurant website as a continuation of your previous project.</p>
+    <h2>Goal:</h2>
+    <p>To create a section and portfolio for the restaurant website as a continuation of your previous project.</p>
+    <h2>Story:</h2>
+    <p>Susan wants to design a website for his restaurant so help him by designing a website and in this project, you can design only the section and portfolio of the website. Rest can be designed in the upcoming project.</p>
+    
+    <nav>
+        <a href="#">Home</a>
+        <a href="#">Menu</a>
+        <a href="#">About</a>
+        <a href="#">Contact</a>
+    </nav>
+
+    <div class="banner"></div>
+
+    <div class="section">
+        <h2>Our Specialties</h2>
+        <p>Explore some of our best dishes loved by our customers.</p>
+        <div class="portfolio">
+            <div class="portfolio-item">Dish 1</div>
+            <div class="portfolio-item">Dish 2</div>
+            <div class="portfolio-item">Dish 3</div>
+        </div>
+    </div>
+</body>
+</html>
