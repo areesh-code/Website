@@ -1,0 +1,167 @@
+/* CSS STYLESHEET - Rangiket Cricket Club */
+
+/* :root: A pseudo-class used to define 'Variables' so you can reuse colors easily */
+:root {
+    --primary: #003087;
+    --secondary: #c8102e;
+    --light: #f4f6f9;
+    --dark: #333;
+}
+
+/* *: The Universal Selector. This targets every single element on the page */
+* {
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+/* html: Targets the whole page structure */
+html { 
+    scroll-behavior: smooth; 
+}
+
+body {
+    font-family: 'Poppins', sans-serif; 
+    background: var(--light); 
+    color: var(--dark); 
+    line-height: 1.6; 
+}
+
+/* HERO SECTION */
+.hero {
+    /* linear-gradient: A function that blends two colors together at an angle */
+    background: linear-gradient(135deg, var(--primary), #001f5c);
+    color: white;
+    text-align: center;
+    padding: 60px 20px;
+}
+
+.logo {
+    width: 120px;
+    height: 120px; 
+    object-fit: cover; 
+    border-radius: 50%; 
+    border: 5px solid var(--secondary); 
+    margin-bottom: 15px;
+}
+
+/* BUTTONS */
+.btn {
+    display: inline-block; 
+    margin-top: 15px;
+    padding: 12px 25px;
+    background: var(--secondary);
+    color: white;
+    text-decoration: none; 
+    border-radius: 25px;
+    transition: 0.3s; 
+    font-weight: 500;
+}
+
+/* :hover: A pseudo-class that triggers a function when the mouse moves over the element */
+.btn:hover {
+    transform: scale(1.05); 
+    opacity: 0.9; 
+}
+
+/* NAVIGATION */
+nav {
+    background: var(--secondary);
+    padding: 15px;
+    text-align: center;
+    position: sticky; 
+    top: 0; 
+    z-index: 1000; 
+}
+
+nav a {
+    color: white;
+    margin: 0 15px;
+    text-decoration: none;
+    transition: 0.3s;
+    font-weight: 500;
+}
+
+/* LAYOUT & SECTIONS */
+section {
+    padding: 60px 20px;
+    max-width: 1100px; 
+    margin: auto; 
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 40px;
+    color: var(--primary);
+    font-size: 2.2rem; 
+}
+
+/* flex: A layout function used to align items in a row or column */
+.home-container {
+    display: flex; 
+    gap: 25px; 
+    flex-wrap: wrap; 
+}
+
+/* GRID SYSTEM */
+.grid {
+    display: grid; 
+    /* repeat/auto-fit/minmax: Advanced functions that automatically decide how many columns fit */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 25px;
+}
+
+/* CARDS */
+.card {
+    background: white;
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.08); 
+    transition: 0.3s;
+    display: flex;
+    flex-direction: column; 
+}
+
+.center { 
+    text-align: center; 
+}
+
+.card img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 15px;
+}
+
+/* DECORATION */
+#gear h2 {
+    color: var(--secondary);
+    position: relative; 
+}
+
+/* ::after: A pseudo-element function that adds content after the actual HTML element */
+#gear h2::after {
+    content: ''; 
+    display: block;
+    width: 80px;
+    height: 4px;
+    background: var(--secondary);
+    margin: 12px auto;
+    border-radius: 2px;
+}
+
+/* FOOTER */
+footer {
+    background: var(--primary);
+    color: white;
+    text-align: center;
+    padding: 30px 20px;
+    margin-top: 40px;
+}
+
+/* RESPONSIVE DESIGN (Media Queries) */
+@media (max-width: 768px) {
+    .home-container { 
+        flex-direction: column; 
+    }
+}

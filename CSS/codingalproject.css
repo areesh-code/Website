@@ -1,0 +1,135 @@
+/* --- 01. ROOT & GLOBAL RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* --- 02. VIBRANT GALAXY BACKGROUND --- */
+body {
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* Matches the deep purple/blue from the images */
+  background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+  overflow: hidden;
+  transition: background 2s ease-in-out;
+  perspective: 1000px;
+}
+
+/* --- 03. CODINGAL GLASS CARD --- */
+.box {
+  width: 350px;
+  padding: 40px;
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+  color: #ffffff;
+  display: none;
+  animation: slideIn 0.6s cubic-bezier(0.23, 1, 0.32, 1);
+  text-align: center;
+}
+
+.active {
+  display: block;
+}
+
+/* --- 04. FLOATING SPACE ELEMENTS --- */
+.floating {
+  position: absolute;
+  z-index: -1;
+  opacity: 0.8;
+  filter: drop-shadow(0 0 15px rgba(255, 255, 255, 0.4));
+  animation: spaceFloat 6s ease-in-out infinite;
+}
+
+@keyframes spaceFloat {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-25px) rotate(5deg); }
+}
+
+/* --- 05. FORM STYLING --- */
+h1, h2 {
+  margin-bottom: 25px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+}
+
+input {
+  width: 100%;
+  padding: 16px;
+  margin: 12px 0;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.15);
+  color: #fff;
+  outline: none;
+  font-family: 'Courier New', monospace;
+  transition: 0.3s;
+}
+
+input:focus {
+  background: rgba(255, 255, 255, 0.25);
+  border-color: rgba(255, 255, 255, 0.5);
+}
+
+button {
+  width: 100%;
+  padding: 16px;
+  background: #FF4F00; /* Original orange from logo */
+  color: #ffffff;
+  font-weight: bold;
+  border: none;
+  border-radius: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 10px 20px rgba(255, 79, 0, 0.3);
+}
+
+button:hover {
+  background: #FF6B00;
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 15px 25px rgba(255, 79, 0, 0.5);
+}
+
+/* --- 06. TERMINAL ERROR MODAL --- */
+#popupOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(10, 10, 30, 0.85);
+  backdrop-filter: blur(12px);
+  display: none;
+  justify-content: center;
+  align-items: center;
+  z-index: 10000;
+}
+
+.code-error-box {
+  background: #1a1b26; /* Deep editor theme color */
+  border: 2px solid #f7768e; /* Soft red */
+  border-radius: 16px;
+  width: 380px;
+  font-family: 'Courier New', monospace;
+  box-shadow: 0 0 50px rgba(247, 118, 142, 0.3);
+  overflow: hidden;
+}
+
+.error-header {
+  background: #f7768e;
+  color: #1a1b26;
+  padding: 12px 20px;
+  font-weight: 800;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.error-code-block {
+  background: #24283b;
+  padding: 20px; }

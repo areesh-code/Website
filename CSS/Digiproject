@@ -1,0 +1,316 @@
+```html
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Electronics Quiz</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, sans-serif;
+    background:linear-gradient(135deg,#40e0d0,#e0ffff);
+    padding:20px;
+}
+
+.container{
+    max-width:800px;
+    margin:auto;
+}
+
+.header{
+    text-align:center;
+    margin-bottom:20px;
+}
+
+.header h1{
+    color:white;
+    font-size:2.5rem;
+    text-shadow:2px 2px 5px rgba(0,0,0,0.3);
+}
+
+.score-circle{
+    width:120px;
+    height:120px;
+    border-radius:50%;
+    background:white;
+    color:#40e0d0;
+    font-size:1.5rem;
+    font-weight:bold;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    margin:20px auto;
+    box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+
+.question{
+    display:none;
+    background:white;
+    padding:25px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+    animation:fadeIn .5s ease;
+}
+
+.question.active{
+    display:block;
+}
+
+.question img{
+    width:100%;
+    max-width:450px;
+    height:250px;
+    object-fit:cover;
+    display:block;
+    margin:0 auto 20px;
+    border-radius:12px;
+}
+
+.question h2{
+    color:#40e0d0;
+    margin-bottom:10px;
+}
+
+.question p{
+    margin-bottom:15px;
+    font-weight:bold;
+}
+
+.options{
+    list-style:none;
+}
+
+.options li{
+    background:#f5f5f5;
+    padding:12px;
+    margin-bottom:10px;
+    border-radius:8px;
+    cursor:pointer;
+    transition:.3s;
+}
+
+.options li:hover{
+    background:#d9ffff;
+}
+
+.correct{
+    background:#d4edda !important;
+    color:#155724;
+}
+
+.incorrect{
+    background:#f8d7da !important;
+    color:#721c24;
+}
+
+#results{
+    display:none;
+    text-align:center;
+    background:white;
+    padding:30px;
+    border-radius:15px;
+    box-shadow:0 4px 15px rgba(0,0,0,0.15);
+}
+
+#results h2{
+    color:#40e0d0;
+    margin-bottom:15px;
+}
+
+.feedback{
+    font-size:1.2rem;
+    margin-top:15px;
+}
+
+@keyframes fadeIn{
+    from{
+        opacity:0;
+        transform:translateY(20px);
+    }
+    to{
+        opacity:1;
+        transform:translateY(0);
+    }
+}
+</style>
+</head>
+<body>
+
+<div class="container">
+
+    <div class="header">
+        <h1>⚡ Electronics Quiz ⚡</h1>
+
+        <div class="score-circle">
+            <span id="score">0/4</span>
+        </div>
+    </div>
+
+    <!-- Question 1 -->
+    <div class="question active" id="q1">
+        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=1200" alt="Electronics">
+
+        <h2>Question 1</h2>
+        <p>What does LED stand for?</p>
+
+        <ul class="options">
+            <li onclick="checkAnswer(this,false)">Light Emitting Device</li>
+            <li onclick="checkAnswer(this,true)">Light Emitting Diode</li>
+            <li onclick="checkAnswer(this,false)">Low Energy Display</li>
+            <li onclick="checkAnswer(this,false)">Linear Electric Diode</li>
+        </ul>
+    </div>
+
+    <!-- Question 2 -->
+    <div class="question" id="q2">
+        <img src="https://images.unsplash.com/photo-1581092921461-eab62e97a780?w=1200" alt="Capacitor">
+
+        <h2>Question 2</h2>
+        <p>Which component stores electrical energy?</p>
+
+        <ul class="options">
+            <li onclick="checkAnswer(this,false)">Resistor</li>
+            <li onclick="checkAnswer(this,true)">Capacitor</li>
+            <li onclick="checkAnswer(this,false)">Transistor</li>
+            <li onclick="checkAnswer(this,false)">Diode</li>
+        </ul>
+    </div>
+
+    <!-- Question 3 -->
+    <div class="question" id="q3">
+        <img src="https://images.unsplash.com/photo-1563770660941-20978e870e26?w=1200" alt="Circuit Board">
+
+        <h2>Question 3</h2>
+        <p>Which instrument is used to measure voltage?</p>
+
+        <ul class="options">
+            <li onclick="checkAnswer(this,false)">Ammeter</li>
+            <li onclick="checkAnswer(this,true)">Voltmeter</li>
+            <li onclick="checkAnswer(this,false)">Thermometer</li>
+            <li onclick="checkAnswer(this,false)">Barometer</li>
+        </ul>
+    </div>
+
+    <!-- Question 4 -->
+    <div class="question" id="q4">
+        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1200" alt="Power Supply">
+
+        <h2>Question 4</h2>
+        <p>Which device converts AC into DC?</p>
+
+        <ul class="options">
+            <li onclick="checkAnswer(this,false)">Transformer</li>
+            <li onclick="checkAnswer(this,false)">Oscillator</li>
+            <li onclick="checkAnswer(this,true)">Rectifier</li>
+            <li onclick="checkAnswer(this,false)">Amplifier</li>
+        </ul>
+    </div>
+
+    <!-- Results -->
+    <div id="results">
+        <h2>Quiz Completed 🎉</h2>
+        <div id="finalScore"></div>
+        <div id="feedback" class="feedback"></div>
+    </div>
+
+</div>
+
+<script>
+let currentQuestion = 1;
+let score = 0;
+const totalQuestions = 4;
+
+function checkAnswer(element, correct){
+
+    const question = element.closest('.question');
+
+    const options = question.querySelectorAll('li');
+
+    options.forEach(option=>{
+        option.style.pointerEvents = 'none';
+    });
+
+    if(correct){
+        element.classList.add('correct');
+        score++;
+    }else{
+        element.classList.add('incorrect');
+    }
+
+    document.getElementById('score').innerText =
+        score + "/" + totalQuestions;
+
+    setTimeout(()=>{
+
+        question.classList.remove('active');
+
+        currentQuestion++;
+
+        const nextQuestion =
+            document.getElementById(
+                "q" + currentQuestion
+            );
+
+        if(nextQuestion){
+
+            nextQuestion.classList.add('active');
+
+        }else{
+
+            showResults();
+        }
+
+    },1000);
+}
+
+function showResults(){
+
+    document.getElementById('results')
+        .style.display = 'block';
+
+    document.getElementById('finalScore')
+        .innerHTML =
+        "<h3>Your Score: " +
+        score +
+        "/" +
+        totalQuestions +
+        "</h3>";
+
+    let message = "";
+
+    if(score === 4){
+
+        message =
+        "🌟 Excellent! Perfect Score!";
+
+    }else if(score >= 3){
+
+        message =
+        "👍 Great Job! You know electronics well.";
+
+    }else if(score >= 2){
+
+        message =
+        "🙂 Good effort. Keep learning.";
+
+    }else{
+
+        message =
+        "📚 Keep practicing and try again.";
+    }
+
+    document.getElementById('feedback')
+        .innerHTML = message;
+}
+</script>
+
+</body>
+</html>
+```
